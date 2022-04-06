@@ -39,14 +39,14 @@ class VoulnteerController extends Controller
         //    return redirect('/donate/view');
     }
 
-    // public function view()
-    // {      
-    //       $donor = Donate::all();
-    //     //   echo "<pre>";
-    //     //   print_r($donor->toArray());
-    //     //   echo "</pre>";
-    //     //   die;
-    //         $data=compact('donor');
-    //        return view('ViewDonors')->with($data);
-    // }
+    public function view()
+    {      
+          $donor = Donate::all();
+        //   echo "<pre>";
+        //   print_r($donor->toArray());
+        //   echo "</pre>";
+        //   die;
+            $data=compact('donor');
+           return view('ViewDonors')->with($data);
+    }
 }
