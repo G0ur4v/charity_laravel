@@ -390,18 +390,19 @@
     <div class="mission2">
       <h6 style="color: #ffb703; margin-left: 5px;">A step for change</h6>
       <h1 style="color: #023047; margin-left: 8px;">Become a Volunteer</h1>
-      <form action="#">
+      <form action="/volunteer" method="post">
+         @csrf
           <div  id="Vname">
-            <input class="vtr" type="text" placeholder="Volunteer Name">
+            <input class="vtr" name="name" type="text" placeholder="Volunteer Name">
           </div>
           <div  id="Vemail">
-            <input class="vtr" type="email" placeholder="Email">
+            <input class="vtr" name="email" type="email" placeholder="Email">
           </div>
         <div id="Vreason">
-            <textarea class="vtr" rows="4" placeholder="Why you want to be a voluteer"></textarea><br>
+            <textarea class="vtr" name="reason" rows="4" placeholder="Why you want to be a voluteer"></textarea><br>
         </div>
       <div id="Vsubmit">
-        <input class="vtr" type="button" value="Submit"> 
+      <button class="button-control" type="submit">Submit</button>
       </div>
         
     </form>

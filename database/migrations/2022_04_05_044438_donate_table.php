@@ -18,7 +18,7 @@ return new class extends Migration
        
             $table->id("donor_no");
             $table->string('name')->nullable();
-            $table->string('email')->unique();
+            $table->string('email');
             $table->integer('amount');
             $table->timestamps();
 
