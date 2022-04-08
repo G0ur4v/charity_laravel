@@ -5,6 +5,7 @@ use App\Models\Donate;
 use App\Models\Volunteer;
 use  App\Http\Controllers\DonateController;
 use  App\Http\Controllers\VoulnteerController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,3 +55,12 @@ Route::post('/volunteer',[VoulnteerController::class,'store']);
 // Route::post('/volunteer', function () {
 //     echo "volunteer post";
 // });
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/login',[AuthController::class , 'login']);
+Route::get('/register',[AuthController::class,'register']);
+Route::post('/register',[AuthController::class,'registerAdmin']);
+Route::post('/login',[AuthController::class,'loginAdmin']);
+Route::get('/logout',[AuthController::class , 'logout']);

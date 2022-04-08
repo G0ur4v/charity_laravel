@@ -33,7 +33,8 @@ class DonateController extends Controller
            $donor->save();
            
            echo "<script> alert('Thankyou for help') </script>";
-           return redirect('/donate/view');
+           return view('index');
+        //    return redirect('/donate/view');
     }
 
     public function view()
