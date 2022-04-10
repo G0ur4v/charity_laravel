@@ -11,7 +11,7 @@ use Hash;
 use Session;
 class AuthController extends Controller
 {
-    //
+    //login contoller
 
     public function login()
     {
@@ -101,7 +101,7 @@ class AuthController extends Controller
         {
             $donor = Donate::all();
             $sum=DB::table('donate')->sum('amount');
-            
+
             $data=compact('donor');
 
            return view('dashboard')->with($data);
