@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Admin;
 use App\Models\Donate;
+
 use Hash;
 use Session;
 class AuthController extends Controller
@@ -59,7 +61,7 @@ class AuthController extends Controller
     public function loginAdmin(Request $request)
     {
          
-        echo "login page";
+        // echo "login page";
         $request->validate([
             'eid'=> 'required|',
              'password'=>'required|'
@@ -98,7 +100,10 @@ class AuthController extends Controller
         if(Session::has('loginID'))
         {
             $donor = Donate::all();
+            $sum=DB::table('donate')->sum('amount');
+            
             $data=compact('donor');
+
            return view('dashboard')->with($data);
         }
         else
