@@ -88,6 +88,9 @@
              <div class="col">
              <a href="/register" >New User /Register Here </a>
              </div>
+             <div class="col">
+             <a href="/" >Home Page </a>
+             </div>
             </div>
              </form>
          

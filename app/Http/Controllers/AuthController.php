@@ -38,7 +38,7 @@ class AuthController extends Controller
         $admin->   ename       =$request['ename'];
         $admin->    eid      =$request['eid'];
         $admin->    email      =$request['email'];
-        $admin->    password      =$request['password'];
+        $admin->    password      = md5($request['password']); 
         // $admin->    password      =Hash::make($request['password']);
            
           $res= $admin->save();
@@ -70,7 +70,7 @@ class AuthController extends Controller
         $admin =Admin::where('eid','=',$request->eid)->first();
 
         if($admin)
-        {   if(Admin::where('password','=',$request->password)->first())
+        {   if(Admin::where('password','=',md5($request->password) )->first())
             {
                     $request->session()->put('loginID',$admin->id);
                     // $donor = Donate::all();
